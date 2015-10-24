@@ -35,6 +35,7 @@ test_y <- read.table("data/UCI HAR Dataset/test/y_test.txt", quote="\"")
 
 #merge test data into ona dataframe
 test_df <- do.call(cbind, list( test_subject, test_y, test_x))
+#nice names to variables
 names(test_df)[1:2] <- c('subjectId', 'activityId')
 
 train_subject <- read.table("data/UCI HAR Dataset/train/subject_train.txt", quote="\"")
@@ -43,6 +44,7 @@ train_y <- read.table("data/UCI HAR Dataset/train/y_train.txt", quote="\"")
 
 #merge train data into ona dataframe
 train_df <- do.call(cbind, list(train_subject, train_y, train_x))
+#nice names to variables
 names(train_df)[1:2] <- c('subjectId', 'activityId')
 
 #mergin everything into one dataframe
@@ -53,6 +55,7 @@ names(main_df)[3:ncol(main_df)] <- make.names(features$V2, unique=TRUE, allow_ =
 
 #making new dataframe with only mean and standard deviation measurements
 measurements_df <- select(main_df, matches("subjectId|activityId|std|mean"))
+#nice activity names instead of activity ids
 measurements_df$activityId <- activity_labels[match(measurements_df$activityId, activity_labels$V1), 'V2']
 names(measurements_df)[2] <- c('activity')
 
@@ -69,3 +72,13 @@ names(measurementsAverageValues_df)[3:4] <- c('feature', 'average')
 #output to file
 write.table(measurementsAverageValues_df, 'average_measurements_dataset.csv', row.name=FALSE)
 ```
+
+###What this script actually does
+
+Downloads dataset containing accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ data.
+
+Merges the training and the test datasets into one and giving meaningful names to variables and activities.
+
+Extracts only the measurements on the mean and standard deviation for each measurement into new dataframe.
+ 
+Creates another tidy data set, long, with the average of each variable for each activity and each subject.
