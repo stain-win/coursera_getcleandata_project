@@ -17,10 +17,10 @@ if(length(new.packages)) install.packages(new.packages)
 library(dplyr)
 library(reshape2)
 
-# tempFile <- tempfile()
-# sourceUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-# download.file(sourceUrl,tempFile,method="curl")
-# unzip(tempFile, exdir = "./data/")
+tempFile <- tempfile()
+sourceUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(sourceUrl,tempFile,method="curl")
+unzip(tempFile, exdir = "./data/")
 
 #clearing all data before we start working with it
 rm(list=ls())
@@ -81,4 +81,4 @@ Merges the training and the test datasets into one and giving meaningful names t
 
 Extracts only the measurements on the mean and standard deviation for each measurement into new dataframe.
  
-Creates another tidy data set, long, with the average of each variable for each activity and each subject.
+Creates another tidy data set, long, with the average of each variable for each activity and each subject and exports it to a .csv file.
