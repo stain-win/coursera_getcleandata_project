@@ -1,10 +1,10 @@
 Guide to creating tidy dataset from "Human Activity Recognition Using Smartphones Dataset" provided by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 ###Prerequisites
-You must be able to run r code on your computer and you must be connected to internet since script downloads dataset from web storage ( https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip )
+You must be able to run r code on your computer and you must be connected to internet since script downloads dataset from web storage [dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 ###Creating tidy dataset
-running this script will produce tidy dataset written as .csv file - average_measurements_dataset.csv in the same location as script
+Running this script will produce tidy dataset written as .csv file - average_measurements_dataset.csv in the same location as script.
 
 #####run_analysis.r
 ```{r}
