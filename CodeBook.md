@@ -96,3 +96,6 @@ Each subject performed six activities:
 4 SITTING
 5 STANDING
 6 LAYING
+
+###Data cleaning and manipulation
+All datas ets, test and training are merged into one data set, then after filtering only the measurements on the mean and standard deviation are left, and at the end new data set was created containing average values for measurements for specific subject and activity. This daset is exported as average_measurements_dataset.csv. Please take a look at [README.md](https://github.com/stain-win/coursera_getcleandata_project/blob/master/README.md) for explanation of data manipulation and cleaning process
